@@ -9,7 +9,7 @@
     //DBからデータを全件取得
     $tasks = $todo->all();
 
-    // echo '<pre>';
+    // echo '<pre>'; 中のコードをそのまま表示
     // var_dump($tasks);
     // exit();
 ?>
@@ -49,26 +49,26 @@
         </section>
         <section class="mt-5">
   <table class="table table-hover">
-      <thead>
+    <thead>
         <tr class="bg-primary text-light">
             <th class=>TODO</th>
             <th>DUE DATE</th>
+            <th>STATUS</th>
             <th></th>
             <th></th>
         </tr>
-      </thead>
+    </thead>
       <tbody>
-      <?php foreach ($tasks as
-              $task):?>
+      <?php foreach ($tasks as $task):?>
         <tr>
-            <td><?php echo h($task['name']); ?><td>
+            <td><?php echo h($task['name']); ?></td>
             <td><?php echo h($task['due_date']); ?></td>
             <td>NOT YET</td>
             <td>
                 <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
             </td>
             <td>
-                <a class="text-danger" href="">DELETE</a>
+                <a class="text-danger" href="delete.php?id=<?php echo h($task['id']); ?>">DELETE</a>
             </td>
         </tr>
         <?php endforeach; ?>
