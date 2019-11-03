@@ -4,6 +4,9 @@
 
      //選択されたtaskのidを取得
      $id = $_GET['id'];
+    //  $word = $_GET['word'];
+    //  $symbol = $_GET['symbol'];
+    //  $sound = $_GET['sound'];
      //Todoクラスのインスタンス化
      $todo = new Todo();
      //DBから指定したデータを1件取得
@@ -35,12 +38,33 @@
     </header>
     <main class="container py-5">
         <section>
-            <form class="form-row" action="update.php" method="POST">
-                <div class="col-12 col-md-9 py-2">
-                    <input type="text" name="task" class="form-control" placeholder="ADD TODO" value="<?php echo h($task['name']);?>">
-                    <input type="hidden" value="<?php echo h($task['id']) ?>" name="id">
+            <form class="form-row justify-content-center" action="update.php" method="POST">
+                <div class="col-12 col-md-4 py-2">
+                    <input type="text"
+                    name="word"
+                    class="form-control"
+                    placeholder="ADD TODO"
+                    value="<?php echo h($task['word']);?>">
                 </div>
-                <div class="py-2 col-md-3 col-12">
+                <div class="col-12 col-md-4 py-2">
+                    <input type="text"
+                    name="symbol"
+                    class="form-control"
+                    placeholder="ADD TODO"
+                    value="<?php echo h($task['symbol']);?>">
+                </div>
+                <div class="col-12 col-md-4 py-2">
+                    <input type="text"
+                    name="sound"
+                    class="form-control"
+                    placeholder="ADD TODO"
+                    value="<?php echo h($task['sound']);?>">
+
+                    <input type="hidden" value="<?php
+                    echo h($task['id']) ?>"
+                    name="id">
+                </div>
+                <div class="py-2 col-md-3 col-10">
                     <button type="submit" class="col-12 btn btn-primary btn-block">UP DATE</button>
                 </div>
             </form>
