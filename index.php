@@ -50,10 +50,14 @@
                     <input type="text" class="form-control" placeholder="Symbol"
                     name="symbol">
                 </div>
-                <div class="col-12 col-md-4 py-2">
+                <!-- <div class="col-12 col-md-4 py-2">
                     <input type="text" class="form-control" placeholder="Sound"
                     name="sound">
-                </div>
+                </div> -->
+                <div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile">
+  <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
+</div>
                 <div class="py-2 col-md-3 col-10">
                     <button type="submit" class="col-12 btn btn-primary">ADD</button>
                 </div>
