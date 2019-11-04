@@ -1,5 +1,5 @@
 i {
-  font-size: 40px;
+  font-size: 30px;
 }
 .custom-file {
 overflow: hidden;
@@ -7,3 +7,25 @@ overflow: hidden;
 .custom-file-label {
   white-space: nowrap;
 }
+.text {
+  font-size: 30px;
+  font-family: 'Jomolhari', serif;
+}
+/* main {
+  background-image: url(../image/back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* height: 100vh;s */
+  color: aliceblue;
+  /* padding-top:50px; */
+  /* width: 50%; */
+  /* opacity: 0.3; */
+}
+backg{
+  opacity: 0.3;
+} */
+/* .img-fluid{
+  background-image: repeat;
+} */

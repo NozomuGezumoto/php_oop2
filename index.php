@@ -25,19 +25,21 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="px-5 bg-primary">
+<header class="px-5 bg-dark">
         <nav class="navbar navbar-dark">
             <a href="index.php" class="navbar-brand">Pronunciation Check</a>
             <div class="justify-content-end">
-                <span class="text-light">
-                    Nozomu
-                </span>
+                <a href="kigou.html" class="text-light">
+                    記号
+</a>
             </div>
         </nav>
     </header>
     <main class="container py-5">
+    <img src="assets/image/sprechenjpg.jpg" class="img-fluid" alt="Responsive image">
         <section>
             <form class="form-row justify-content-center" action="create.php" method="POST">
                 <div class="col-12 col-md-4 py-2">
@@ -50,36 +52,40 @@
                     <input type="text" class="form-control" placeholder="Symbol"
                     name="symbol">
                 </div>
-                <!-- <div class="col-12 col-md-4 py-2">
+                <div class="col-12 col-md-4 py-2">
                     <input type="text" class="form-control" placeholder="Sound"
                     name="sound">
-                </div> -->
+                </div>
                 <div class="custom-file">
   <input type="file" class="custom-file-input" id="customFile">
   <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
 </div>
                 <div class="py-2 col-md-3 col-10">
-                    <button type="submit" class="col-12 btn btn-primary">ADD</button>
+                    <button type="submit" class="col-12 btn btn-dark">ADD</button>
                 </div>
             </form>
         </section>
         <section class="mt-5">
   <table class="table table-hover">
     <thead>
-        <tr class="bg-primary text-light">
+        <tr class="bg-dark text-light">
             <th class=>Word</th>
             <th>Symbol</th>
             <th>Sound</th>
-            <th></th>
-            <th></th>
+            <th>再生</th>
+            <th>停止</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
       <tbody>
       <?php foreach ($tasks as $task):?>
         <tr>
-            <td><?php echo h($task['word']); ?></td>
-            <td><?php echo h($task['symbol']); ?></td>
-            <td><?php echo h($task['sound']); ?></td>
+            <td class="text"><?php echo h($task['word']); ?></td>
+            <td class="text"><?php echo h($task['symbol']); ?></td>
+            <td class="text"><?php echo h($task['sound']); ?></td>
+            <td><a href="javascript:void(0);" onclick="PlaySound();"><i class="fas fa-play"></i></a></td>
+            <td><a href="javascript:void(0);" onclick="StopSound();"><i class="fas fa-stop"></i></a></td>
             <td>
                 <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>"><i class="far fa-edit"></i></a>
             </td>
@@ -92,6 +98,6 @@
   </table>
         </section>
     </main>
-
+    <script src="assets/js/bootstrap.js"></script>
 </body>
 </html>
