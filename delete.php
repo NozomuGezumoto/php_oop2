@@ -6,4 +6,5 @@ $todo = New Todo;
 //Todoクラスのdeleteメソッドを実行
 $todo->delete($id);
 //index.phpに戻る
-header('Location: index.php');
+// header('Location: index.php');
+echo json_encode($id);
